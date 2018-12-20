@@ -10,7 +10,7 @@
 (define ANT_SPEED 5)
 (define TIMESTEP_LEN 0.05)
 (define ARROW_LEN 2)
-(define MAX_TURN_ANG 30)
+(define MAX_TURN_ANG 60)
 
 (define frame (new frame% [label "Ant Model"]
 		    [width WIDTH]
@@ -34,7 +34,7 @@
 	[else n]))
 
 (define (turn-angle ant)
-  (let ([ang (list-ref ant 2)]) (+ ang (degrees->radians (random (- MAX_TURN_ANG) MAX_TURN_ANG)))))
+  (let ([ang (list-ref ant 0)]) (+ ang (degrees->radians (random (- MAX_TURN_ANG) MAX_TURN_ANG)))))
 
 (define (behave ants) 
   (if (null? ants)
